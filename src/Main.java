@@ -15,42 +15,37 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 
-public class Main extends Application{
-
-
+public class Main extends Application {
 
 	public void start(String[] args) {
-		
+
 		launch(args);
 
 	}
 
 	@Override
 	public void start(Stage mainStage) throws Exception {
-		
-		
+
 		MyCanvas drawingFrame = new MyCanvas();
-		
+
 		HBox totalLayout = new HBox(drawingFrame);
-		VBox bottomPanel = new VBox();
-		HBox menu = new BottomPanel(drawingFrame);
-		bottomPanel.getChildren().add(menu);
-		
+		VBox leftSide = new VBox();
+		HBox bottomPanel = new BottomPanel(drawingFrame);
 		VBox colorMenu = new SidePanel();
-		
-		totalLayout.getChildren().add(bottomPanel);
+
+		leftSide.getChildren().add(drawingFrame);
+		leftSide.getChildren().add(bottomPanel);
+
+		totalLayout.getChildren().add(leftSide);
 		totalLayout.getChildren().add(colorMenu);
-		
-		
-		
+
 		Scene mainScene = new Scene(totalLayout);
 		mainStage.setTitle("Welcome to PaintFX");
 		mainStage.setHeight(300);
 		mainStage.setWidth(600);
 		mainStage.setScene(mainScene);
 		mainStage.show();
-		
-		
+
 	}
 
 }

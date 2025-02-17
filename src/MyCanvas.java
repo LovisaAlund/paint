@@ -6,7 +6,7 @@ import javafx.scene.paint.Color;
 
 public class MyCanvas extends Canvas {
 	private Model model;
-	GraphicsContext gc;
+	private GraphicsContext gc;
 
 	public MyCanvas() {
 		model = new Model();
